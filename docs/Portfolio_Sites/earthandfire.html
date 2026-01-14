@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earth & Fire Studio</title>
+
+  <style>
+    /* ---------- Variables ---------- */
+    :root {
+      --sand: #f3efe9;
+      --earth: #3f3b36;
+      --stone: #6f6b66;
+      --accent: #9a7b4f;
+      --overlay: rgba(63, 59, 54, 0.55);
+    }
+
+    /* ---------- Reset ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: var(--sand);
+      color: var(--earth);
+      line-height: 1.6;
+    }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(243, 239, 233, 0.95);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--earth);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* ---------- Parallax Sections ---------- */
+    .parallax {
+      min-height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .parallax::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--overlay);
+    }
+
+    .parallax-content {
+      position: relative;
+      color: var(--sand);
+      text-align: center;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .parallax-content h1,
+    .parallax-content h2 {
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .parallax-content p {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    /* ---------- Content Sections ---------- */
+    .content-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 3rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      font-weight: 500;
+    }
+
+    /* ---------- Featured Works ---------- */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .work-item {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .work-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .work-item div {
+      padding: 1.5rem;
+    }
+
+    .work-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .work-item p {
+      font-size: 0.9rem;
+      color: var(--stone);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background-color: var(--earth);
+      color: var(--sand);
+      text-align: center;
+      padding: 3rem 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 768px) {
+      .parallax {
+        background-attachment: scroll;
+      }
+
+      nav ul {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="parallax"
+    style="background-image: url(images/pexels-belle-co-99483-1000437.jpg);">
+    <div class="parallax-content">
+      <h1>Earth & Fire</h1>
+      <p>
+        Handcrafted pottery and artisan objects shaped by earth, fire,
+        and quiet intention.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Works -->
+  <section id="works" class="content-section">
+    <h2>Featured Works</h2>
+
+    <div class="works-grid">
+      <div class="work-item">
+        <img src="images/pexels-liza-sigareva-2149951107-35463140.jpg" alt="Stoneware Vase">
+        <div>
+          <h3>Stoneware Vase</h3>
+          <p>Natural ash glaze with subtle surface variation.</p>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <img src="images/pexels-ionela-mat-268382825-26847863.jpg" alt="Ceramic Bowl">
+        <div>
+          <h3>Handbuilt Bowl</h3>
+          <p>Organic form designed for everyday use.</p>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <img src="images/pexels-pixabay-357428.jpg" alt="Serving Platter">
+        <div>
+          <h3>Serving Platter</h3>
+          <p>Functional elegance with raw clay character.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Parallax -->
+  <section id="about" class="parallax"
+    style="background-image: url(images/pexels-belle-co-99483-1000454.jpg);">
+    <div class="parallax-content">
+      <h2>About the Studio</h2>
+      <p>
+        Each piece is made slowly and deliberately, embracing imperfection,
+        material honesty, and timeless design.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Earth & Fire Studio · Handcrafted Ceramics
+  </footer>
+
+</body>
+</html>
